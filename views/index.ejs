@@ -1,0 +1,50 @@
+<% include ./partials/header %>
+
+<div class='ui container'>
+    <h1 class='ui block header'>List Of Heroes</h1>
+    <% heroes.forEach(function(hero) { %>
+        <div class='ui raised segment'>
+            <div class='ui two column grid'>
+                <div class='row'>
+                    <a href='/heroes/<%= hero._id %>'>
+                        <h2 class='ui horizontal divider header'><%= hero.name %></h2>
+                    </a>
+                </div>
+                <div class='row'>
+                    <div class='three wide column'>
+                        <a href='/heroes/<%= hero._id %>'>
+                            <div class='heroThumbnail ui fluid tiny rounded top aligned image'>
+                                <img src='<%= hero.image %>'>
+                            </div>
+                        </a>                        
+                    </div>
+                    <div class='thirteen wide column'>
+                        <span class='heroDesc'>
+                            <% if (hero.description.length >= 415) { %>
+                                <%= hero.description.substring(0, 415) %>
+                                <a href='/heroes/<%= hero._id %>'>[...]</a>
+                            <% } else { %>
+                                <%= hero.description %>
+                            <% } %>
+                        </span>
+                    </div>
+                </div>
+                <div class='row'>
+                    <% if (hero.isHalfGod) { %>
+                        <div class='isHG ui red horizontal label'>
+                            <i class='icon lightning'></i>
+                            <span>Demigod</span>
+                        </div>
+                    <% } else { %>
+                        <div class='isHG ui blue horizontal label'>
+                            <i class='icon male'></i>
+                            <span>Human</span>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    <% }); %>
+</div>
+
+<% include ./partials/footer %>

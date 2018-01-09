@@ -1,0 +1,43 @@
+<% include ./partials/header %>
+
+<div class='ui container'>
+    <h1 class='ui block header'><%= hero.name %></h1>
+    <div class='ui three column grid'>
+        <div class='row'>
+            <div class='twelve wide column'>
+                <div id='showIsHG'>
+                    <% if (hero.isHalfGod) { %>
+                        <div class='isHG ui red horizontal label'>
+                            <i class='icon lightning'></i>
+                            <span>Demigod</span>
+                        </div>
+                    <% } else { %>
+                        <div class='isHG ui blue horizontal label'>
+                            <i class='icon male'></i>
+                            <span>Human</span>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+            <div class='two wide column'>
+                <button  class='ui basic button orange'>
+                    <a href='/heroes/<%= hero._id %>/edit'><i class='edit icon'></i> EDIT</a>
+                </button>
+            </div>
+            <div class='two wide column'>
+                <form action='/heroes/<%= hero._id %>?_method=DELETE' method='POST'>
+                    <button class='ui basic button red'>
+                        <i class='remove icon'></i>
+                    DELETE</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <img src='<%= hero.image %>' class='ui fluid rounded small image' id='showImg'>
+
+
+    <p id='showDesc'><%- hero.description %></p>
+
+</div>
+
+<% include ./partials/footer %>

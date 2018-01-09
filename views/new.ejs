@@ -1,0 +1,34 @@
+<% include ./partials/header %>
+
+<div class='ui container'>
+    <h1 class='ui block header'>Add a new hero: </h1>
+    
+    <form action='/heroes' method='POST' class='ui form'>
+        <div class='field'>
+            <label>Name: </label>
+            <input type='text' name='hero[name]' class='ui input' placeholder='Name...' required>
+        </div>
+        <div class='field'>
+            <label>Image Link: </label>
+            <input type='text' name='hero[image]' class='ui input' placeholder='Image Link...' required>
+        </div>
+        <div class='field'>
+            <label>Description: </label>
+            <textarea name='hero[description]' placeholder='Description...' required></textarea>
+        </div>
+        <div class='inline fields'>
+            <div class='field'>
+                <label>Demigod</label>
+                <input type='radio' value='true' name='hero[isHalfGod]' class='ui radio checkbox' required>
+            </div>
+            <div class='field'>
+                <label>Human</label>
+                <input type='radio' value='false' name='hero[isHalfGod]' class='ui radio checkbox' required>
+            </div>
+            <input type='submit' value='Submit' class='ui button large'>
+        </div>
+    </form>
+</div>
+
+
+<% include ./partials/footer %>

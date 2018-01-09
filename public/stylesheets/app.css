@@ -1,0 +1,79 @@
+button.ui.button {
+    display: inline-block;
+    margin: 12px auto;
+    width: 100%;
+}
+
+.ui.basic.button.orange a {
+    color: #f2711c;
+}
+
+.ui.container {
+    padding-bottom: 10px;
+}
+
+.ui.form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h2.ui.header {
+    margin: 0.5em auto;
+    width: 80%;
+}
+
+.ui.raised.segment {
+    width: 80%;
+    margin: 1.0em auto;
+}
+
+.ui.block.header:first-child {
+    padding: 15px;
+    font-family: 'Quattrocento';
+    letter-spacing: 0.03em;
+    font-size: 3.0em;
+    text-align: center;
+}
+
+.ui.text.menu {
+    font-size: 1.3em;
+}
+
+.heroThumbnail {
+    margin-left: 1.0em;
+}
+
+.ui.label.isHG {
+    width: 100%;
+    margin-left: 0.2em;
+    font-size: 1.2em;
+}
+
+.ui.two.column.grid {
+    margin: 0 auto;
+    width: 65%;
+}
+
+#logo {
+    font-size: 3.0em;
+    color: black;
+}
+
+#logo:hover {
+    color:black;
+}
+
+#showImg {
+    margin: 0 2.0em;
+    float: left;
+}
+
+#showDesc {
+    margin: 0 2.0em;
+}
+
+#showIsHG {
+    width: 100%;
+    margin: 15px auto;
+    display: inline-block;
+}

@@ -1,0 +1,41 @@
+<% include ./partials/header %>
+<% var hgCheck; %>
+<% var humanCheck; %>
+<% if (hero.isHalfGod) { %>
+    <% hgCheck = 'checked'; %>
+<% } else { %>
+    <% humanCheck = 'checked'; %>
+<% } %>
+
+<div class='ui container'>
+    <h1 class='ui block header'>Edit <%= hero.name %></h1>
+    
+    <form action='/heroes/<%= hero._id %>?_method=PUT' method='POST' class='ui form'>
+        <div class='field'>
+            <label>Name: </label>
+            <input type='text' name='hero[name]' value='<%= hero.name %>'>
+        </div>
+        <div class='field'>
+            <label>Image Link: </label>
+            <input type='text' name='hero[image]' value='<%= hero.image %>'>
+        </div>
+        <div class='field'>
+            <label>Description</label>
+            <textarea name='hero[description]'><%= hero.description %></textarea>
+            </label>
+        </div>
+        <div class='inline fields'>
+            <div class='field'>
+                <label>Half God</label>
+                <input type='radio' value='true' name='hero[isHalfGod]' <%= hgCheck %>>
+            </div>
+            <div class='field'>
+                <label>Human</label>
+                <input type='radio' value='false' name='hero[isHalfGod]' <%= humanCheck %>>
+            </div>
+            <input type='submit' class='ui button large'>
+        </div>
+    </form>
+</div>
+
+<% include ./partials/footer %>
